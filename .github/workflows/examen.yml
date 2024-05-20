@@ -41,6 +41,6 @@ jobs:
         port: 22 
         script: |
             sleep 40
-            docker stop web && docker rm web
+            docker stop fastapi && docker rm fastapi
             docker rmi ${{ secrets.DH_USUARIO }}/fastapi
             docker run -d -p 80:8000 --name web ${{ secrets.DH_USUARIO }}/fastapi

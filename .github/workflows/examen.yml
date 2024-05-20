@@ -20,11 +20,11 @@ jobs:
       run: |
         python -m pip install --upgrade pip
         pip install pylint
+        pip install sqlalchemy
+        pip install fastapi
+        pip install uvicorn
     - name: Analysing the code with pylint
       run: |
-        python3 -m venv venv
-        source /venv/bin/activate
-        pip install -r requirements.txt
         pylint -d C0116,W0622 $(git ls-files '*.py')
 
   build:

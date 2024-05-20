@@ -77,11 +77,11 @@ jobs:
             docker rmi ${{ secrets.DH_USUARIO }}/fastapi
             docker run -d -p 80:8000 --name fastapi ${{ secrets.DH_USUARIO }}/fastapi
 
-    scan:
-      runs-on: ubuntu-latest
-      needs: aws
-      steps:
-        - uses: actions/test@v3
-          script:
-            curl http://54.226.176.135/status
-            curl http://54.226.176.135/students/1
+  test:
+    runs-on: ubuntu-latest
+    needs: aws
+    steps:
+    - uses: actions/test@v3
+        script:
+           curl http://54.226.176.135/status
+           curl http://54.226.176.135/students/1

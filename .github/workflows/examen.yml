@@ -82,6 +82,7 @@ jobs:
     needs: aws
     steps:
     - uses: actions/test@v3
+      with:
         script:
            curl http://54.226.176.135/status
            curl http://54.226.176.135/students/1
